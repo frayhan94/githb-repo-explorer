@@ -13,7 +13,6 @@ function SearchBar() {
   const { query, setQuery, setSelectedUserName, setShowModalRepoList, page, setPage } =
     useSearchStore();
   const {
-    setValue,
     register,
     handleSubmit,
     formState: { errors },
