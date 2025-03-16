@@ -5,7 +5,8 @@ import { useSearchStore } from "@/store/searchStore";
 import { motion } from "framer-motion";
 
 function RepoList() {
-  const { selectedUserName, setShowModalRepoList, pageRepoList } = useSearchStore();
+  const { selectedUserName, setShowModalRepoList, pageRepoList, setPageRepoList } =
+    useSearchStore();
   const { data: repos, isLoading, error } = useGithubRepos(selectedUserName, pageRepoList);
   if (!selectedUserName) return null;
   if (isLoading) return <p>Loading repositories...</p>;
@@ -58,6 +59,27 @@ function RepoList() {
             </motion.li>
           ))}
         </ul>
+        {!!repos?.length && (
+          <div className="flex justify-between mt-4">
+            <button
+              onClick={() => setPageRepoList((prev) => Math.max(prev - 1, 1))}
+              disabled={pageRepoList === 1 || isLoading}
+              className={`px-4 py-2 rounded-md ${pageRepoList === 1 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600 cursor-pointer"}`}
+            >
+              Previous
+            </button>
+            <span className="text-gray-700 text-xl font-semibold text-2xl">
+              Page {pageRepoList}
+            </span>
+            <button
+              onClick={() => setPageRepoList((prev) => prev + 1)}
+              disabled={repos?.length === 0 || isLoading}
+              className={`px-4 py-2 rounded-md ${repos?.length === 0 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600 cursor-pointer"}`}
+            >
+              Next
+            </button>
+          </div>
+        )}
       </motion.div>
     </motion.div>
   );
