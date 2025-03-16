@@ -136,7 +136,7 @@ function SearchBar() {
               >
                 Previous
               </button>
-              <span className="text-gray-700">Page {page}</span>
+              <span className="text-gray-700 text-xl font-semibold text-2xl">Page {page}</span>
               <button
                 onClick={() => setPage((prev) => prev + 1)}
                 disabled={users?.length === 0 || isLoading}
