@@ -6,6 +6,8 @@ interface SearchState {
   setSelectedUserName: (selectedUserName: string) => void;
   showModalRepoList: boolean;
   setShowModalRepoList: (value: boolean) => void;
+  page: number;
+  setPage: (page: number | ((prev: number) => number)) => void;
 }
 
 export const useSearchStore = create<SearchState>((set) => ({
@@ -15,4 +17,9 @@ export const useSearchStore = create<SearchState>((set) => ({
   setSelectedUserName: (selectedUserName) => set({ selectedUserName }),
   showModalRepoList: false,
   setShowModalRepoList: (showModalRepoList) => set({ showModalRepoList }),
+  page: 1,
+  setPage: (page) =>
+    set((state) => ({
+      page: typeof page === "function" ? page(state.page) : page,
+    })),
 }));
