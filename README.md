@@ -15,15 +15,8 @@ A **Next.js** web app that allows users to **search GitHub users** and **view th
 - 📂 Implement pagination on user
 - 📂 Implement pagination on repo list
 
-🎬 **Live Demo**: [Click Here](https://your-vercel-url.com)
+🎬 **Live Demo**: [Click Here](https://githb-repo-explorer-74k8.vercel.app/)
 
----
-
-## 📸 Screenshots
-
-![GitHub Explorer](./public/screenshot.png)
-
----
 
 ## 🛠️ **Tech Stack**
 
