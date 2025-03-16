@@ -10,7 +10,10 @@ A **Next.js** web app that allows users to **search GitHub users** and **view th
 
 - 🔥 Search for **GitHub users** dynamically
 - 📂 View **repositories** of any user
-- 🌙 **Dark mode support**
+- 📂 Keyboard handling when press escape will close the Repo Modal
+- 📂 Keyboard handling when press enter will automatically search the user
+- 📂 Implement pagination on user
+- 📂 Implement pagination on repo list
 
 🎬 **Live Demo**: [Click Here](https://your-vercel-url.com)
 
@@ -43,3 +46,7 @@ cd github-repo-explorer
 npm install
 npm run dev
 ```
+
+## **Todo**
+
+- **Implement unit test fully with mock store and TanStack query:**
