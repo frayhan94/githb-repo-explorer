@@ -7,7 +7,7 @@ const fetchGithubRepos = async (username: string) => {
     headers: {
       Authorization: `Bearer ${GITHUB_ACCESS_TOKEN}`,
       Accept: "application/vnd.github.v3+json",
-    }
+    },
   });
   return data;
 };

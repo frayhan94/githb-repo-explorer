@@ -7,15 +7,24 @@ import { useEffect } from "react";
 
 export default function Home() {
   const showModalRepoList = useSearchStore((state) => state.showModalRepoList);
+  const setShowModalRepoList = useSearchStore((state) => state.setShowModalRepoList);
 
   useEffect(() => {
+    const handleKeydown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShowModalRepoList(false);
+      }
+    };
     if (showModalRepoList) {
       document.body.classList.add("no-scroll");
+      document.addEventListener("keydown", handleKeydown);
     } else {
       document.body.classList.remove("no-scroll");
     }
     return () => {
       document.body.classList.remove("no-scroll");
+      document.addEventListener("keydown", handleKeydown);
+      document.removeEventListener("keydown", handleKeydown);
     };
   }, [showModalRepoList]);
   return (

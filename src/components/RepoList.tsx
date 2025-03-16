@@ -45,9 +45,13 @@ function RepoList() {
                 window.open(`https://github.com/${repo.full_name.toString()}`, "_blank")
               }
             >
-              <a target={"_blank"} className={"p-3.5"}>
-                {repo.name}
-              </a>
+              <div>
+                Title:
+                <a target={"_blank"}>{repo.name}</a>
+              </div>
+              <div>Description: {repo.description}</div>
+              <div>Watchers: {repo.watchers_count}</div>
+              <div>Forks: {repo.forks_count}</div>
             </motion.li>
           ))}
         </ul>
