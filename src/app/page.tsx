@@ -13,6 +13,8 @@ export default function Home() {
     const handleKeydown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setShowModalRepoList(false);
+      } else if (e.key === "Enter") {
+        document.getElementById("search-button")?.click();
       }
     };
     if (showModalRepoList) {

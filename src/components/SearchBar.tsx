@@ -56,6 +56,7 @@ function SearchBar() {
               </div>
               <div>
                 <motion.button
+                  id={"search-button"}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.0 }}
                   className={
