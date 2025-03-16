@@ -8,6 +8,8 @@ interface SearchState {
   setShowModalRepoList: (value: boolean) => void;
   page: number;
   setPage: (page: number | ((prev: number) => number)) => void;
+  pageRepoList: number;
+  setPageRepoList: (page: number | ((prev: number) => number)) => void;
 }
 
 export const useSearchStore = create<SearchState>((set) => ({
@@ -21,5 +23,10 @@ export const useSearchStore = create<SearchState>((set) => ({
   setPage: (page) =>
     set((state) => ({
       page: typeof page === "function" ? page(state.page) : page,
+    })),
+  pageRepoList: 1,
+  setPageRepoList: (pageRepoList) =>
+    set((state) => ({
+      page: typeof pageRepoList === "function" ? pageRepoList(state.page) : pageRepoList,
     })),
 }));

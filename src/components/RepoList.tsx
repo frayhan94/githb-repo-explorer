@@ -5,9 +5,8 @@ import { useSearchStore } from "@/store/searchStore";
 import { motion } from "framer-motion";
 
 function RepoList() {
-  const selectedUserName = useSearchStore((state) => state.selectedUserName);
-  const setShowModalRepoList = useSearchStore((state) => state.setShowModalRepoList);
-  const { data: repos, isLoading, error } = useGithubRepos(selectedUserName);
+  const { selectedUserName, setShowModalRepoList, pageRepoList } = useSearchStore();
+  const { data: repos, isLoading, error } = useGithubRepos(selectedUserName, pageRepoList);
   if (!selectedUserName) return null;
   if (isLoading) return <p>Loading repositories...</p>;
   if (error) return <p>Error fetching repositories...</p>;
