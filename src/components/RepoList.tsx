@@ -16,22 +16,26 @@ function RepoList() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 flex items-center justify-center  bg-gray-50	 bg-opacity-50 z-50"
+      className="fixed inset-0 flex  justify-center  bg-gray-50	 bg-opacity-50 z-50"
     >
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="bg-white w-full max-w-3xl p-6 rounded-lg shadow-lg relative h-[500px] overflow-y-auto"
+        className="bg-white w-full max-w-3xl p-6 rounded-lg shadow-lg relative  overflow-y-auto"
       >
-        <button
-          onClick={() => setShowModalRepoList(false)}
-          className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-xl cursor-pointer"
-        >
-          ✖
-        </button>
-        <h2 className="text-3xl font-bold mb-4 text-center">Repositories for {selectedUserName}</h2>
+        <div className={"bg-white sticky top-[-24px] z-50"}>
+          <button
+            onClick={() => setShowModalRepoList(false)}
+            className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-xl cursor-pointer"
+          >
+            ✖
+          </button>
+          <h2 className="text-3xl font-bold mb-4 text-center">
+            Repositories for {selectedUserName}
+          </h2>
+        </div>
         <ul>
           {repos?.map((repo: Repo) => (
             <motion.li
