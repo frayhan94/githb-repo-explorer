@@ -33,6 +33,7 @@ A **Next.js** web app that allows users to **search GitHub users** and **view th
 - **Form Handling:** React Hook Form + Zod
 - **API Requests:** Axios, GitHub API
 - **Deployment:** Vercel
+- **Animation:** Framer Motion
 
 ---
 
@@ -45,6 +46,18 @@ git clone https://github.com/frayhan94/githb-repo-explorer
 cd github-repo-explorer
 npm install
 npm run dev
+```
+
+### 🔧 **2. Create env**
+```sh
+1. touch .env.local
+2. Then write your token with this key env NEXT_PUBLIC_GITHUB_ACCESS_TOKEN
+```
+
+
+### 🔧 **3. Unit test**
+```sh
+npm run test
 ```
 
 ## **Todo**
