@@ -127,7 +127,7 @@ function SearchBar() {
             )}
           </div>
 
-          {users?.length && (
+          {!!users?.length && (
             <div className="flex justify-between mt-4">
               <button
                 onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
