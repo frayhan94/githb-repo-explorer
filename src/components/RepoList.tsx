@@ -43,18 +43,18 @@ function RepoList() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               key={repo.id}
-              className="bg-gray-500 p-2 mb-2 rounded-md text-white cursor-pointer"
+              className="bg-gray-300 p-2 mb-2 rounded-md text-gray-700	 cursor-pointer"
               onClick={() =>
                 window.open(`https://github.com/${repo.full_name.toString()}`, "_blank")
               }
             >
-              <div>
+              <div className={"text-xl font-semibold"}>
                 Title:
                 <a target={"_blank"}>{repo.name}</a>
               </div>
-              <div>Description: {repo.description}</div>
-              <div>Watchers: {repo.watchers_count}</div>
-              <div>Forks: {repo.forks_count}</div>
+              <div className={"text-xl font-semibold"}>Description: {repo.description}</div>
+              <div className={"text-xl font-semibold"}>Watchers: {repo.watchers_count}</div>
+              <div className={"text-xl font-semibold"}>Forks: {repo.forks_count}</div>
             </motion.li>
           ))}
         </ul>

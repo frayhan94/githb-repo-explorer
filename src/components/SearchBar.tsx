@@ -131,7 +131,7 @@ function SearchBar() {
             <div className="flex justify-between mt-4">
               <button
                 onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                disabled={page === 1}
+                disabled={page === 1 || isLoading}
                 className={`px-4 py-2 rounded-md ${page === 1 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600 cursor-pointer"}`}
               >
                 Previous
@@ -139,7 +139,7 @@ function SearchBar() {
               <span className="text-gray-700">Page {page}</span>
               <button
                 onClick={() => setPage((prev) => prev + 1)}
-                disabled={users?.length === 0}
+                disabled={users?.length === 0 || isLoading}
                 className={`px-4 py-2 rounded-md ${users?.length === 0 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600 cursor-pointer"}`}
               >
                 Next
