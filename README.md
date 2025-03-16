@@ -3,6 +3,7 @@
 A **Next.js** web app that allows users to **search GitHub users** and **view their repositories** in real time.
 
 🔍 **Requirement**
+
 1. Node JS Used version v22.14.0
 
 🔍 **Features**
@@ -37,6 +38,8 @@ A **Next.js** web app that allows users to **search GitHub users** and **view th
 ### 🔧 **1. Clone the Repo**
 
 ```sh
-git clone https://github.com/your-github-repo-url.git
+git clone https://github.com/frayhan94/githb-repo-explorer
 cd github-repo-explorer
+npm install
+npm run dev
 ```
