@@ -128,23 +128,25 @@ function SearchBar() {
             )}
           </div>
 
-          <div className="flex justify-between mt-4">
-            <button
-              onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-              disabled={page === 1}
-              className={`px-4 py-2 rounded-md ${page === 1 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"}`}
-            >
-              Previous
-            </button>
-            <span className="text-gray-700">Page {page}</span>
-            <button
-              onClick={() => setPage((prev) => prev + 1)}
-              disabled={users?.length === 0}
-              className={`px-4 py-2 rounded-md ${users?.length === 0 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"}`}
-            >
-              Next
-            </button>
-          </div>
+          {users?.length && (
+            <div className="flex justify-between mt-4">
+              <button
+                onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+                disabled={page === 1}
+                className={`px-4 py-2 rounded-md ${page === 1 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600 cursor-pointer"}`}
+              >
+                Previous
+              </button>
+              <span className="text-gray-700">Page {page}</span>
+              <button
+                onClick={() => setPage((prev) => prev + 1)}
+                disabled={users?.length === 0}
+                className={`px-4 py-2 rounded-md ${users?.length === 0 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600 cursor-pointer"}`}
+              >
+                Next
+              </button>
+            </div>
+          )}
         </div>
       </form>
     </motion.div>
